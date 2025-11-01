@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://xhma3wlrqehr"]
+
+[ext_resource type="PackedScene" uid="uid://bbt71rqh7m6g5" path="res://levels/castle_level.tscn" id="1_q3u5y"]
+[ext_resource type="Script" uid="uid://dkyohgbh73w68" path="res://components/game_tree.gd" id="1_qu4p1"]
+[ext_resource type="Script" uid="uid://dm7ened2a7bkt" path="res://components/players_mgr.gd" id="3_ar0u2"]
+[ext_resource type="Script" uid="uid://bxmh3qxko2oq8" path="res://ui/gui_mgr.gd" id="3_t4jwi"]
+[ext_resource type="PackedScene" uid="uid://cnc7h6xdn8j2b" path="res://ui/start_connect_menu.tscn" id="4_d04qd"]
+[ext_resource type="Script" uid="uid://svxs3weejnku" path="res://components/enet_server.gd" id="5_d04qd"]
+[ext_resource type="Script" uid="uid://vdstt8nlv1s8" path="res://components/server_connector.gd" id="6_g7dyb"]
+
+[node name="GameTree" type="Node"]
+script = ExtResource("1_qu4p1")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://moj41sn8xhfy")
+spawn_path = NodePath("../PlayersMgr")
+
+[node name="Level" type="Node" parent="."]
+
+[node name="CastleLevel" parent="Level" instance=ExtResource("1_q3u5y")]
+
+[node name="PlayersMgr" type="Node" parent="."]
+script = ExtResource("3_ar0u2")
+
+[node name="GuiMgr" type="Node" parent="."]
+script = ExtResource("3_t4jwi")
+
+[node name="StartConnectMenu" parent="GuiMgr" instance=ExtResource("4_d04qd")]
+
+[node name="ServerInterface" type="Node" parent="."]
+
+[node name="EnetServer" type="Node" parent="ServerInterface"]
+script = ExtResource("5_d04qd")
+
+[node name="ServerConnector" type="Node" parent="ServerInterface"]
+script = ExtResource("6_g7dyb")
