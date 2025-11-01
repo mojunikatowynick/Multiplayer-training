@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761987137
+::res://::1762015615
 icon.svg::CompressedTexture2D::5365293905450264375::1761745080::1761745147::1::::<><><>0<>0<>59fc4bf7e8b63903eb25dfe5c0f9b802<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1761745080::0::1::::<><><>0<>0<><>::
 ::res://addons/::1761987065
@@ -55,9 +55,9 @@ client_globals.gd::GDScript::4491372040999989011::1761745080::0::1::::<>Node<><>
 4_replication.png::CompressedTexture2D::4538757462612305686::1761745080::1761745147::1::::<><><>0<>0<>0ead87258ecefbd669efafbce3ef5250<>res://.godot/imported/4_replication.png-909a98b0b2fd7ad80431bf33337f0aff.ctex::
 4_switching_sessions_remote_scene_tree.png::CompressedTexture2D::5846245676224415661::1761745080::1761745147::1::::<><><>0<>0<>ce41fedcf3fc7863d9a9cada3a8bc277<>res://.godot/imported/4_switching_sessions_remote_scene_tree.png-24c09bddc57283fca56a0f2b1749d376.ctex::
 5_network_profiler.png::CompressedTexture2D::3609862453701455305::1761745080::1761745147::1::::<><><>0<>0<>4e22b589f4b9db55a7833c563a37f28d<>res://.godot/imported/5_network_profiler.png-427957c876f71560a891d1e2f80643b5.ctex::
-::res://entities/::1761987065
+::res://entities/::1761987864
 castle_door.gd::GDScript::5025098602061762152::1761811682::0::1::::CastleDoor<>Node2D<><>0<>0<><>::
-castle_door.tscn::PackedScene::7271034565700783201::1761986783::0::1::::<><><>0<>0<><>::uid://cdugv0uxucdi3::::res://entities/castle_door.gd<>uid://bdbqqufkl6b1y::::res://assets/castle_door.png
+castle_door.tscn::PackedScene::7271034565700783201::1761987864::0::1::::<><><>0<>0<><>::uid://cdugv0uxucdi3::::res://entities/castle_door.gd<>uid://bdbqqufkl6b1y::::res://assets/castle_door.png
 player.tscn::PackedScene::1809570649863638543::1761986783::0::1::::<><><>0<>0<><>::uid://ddf0nv4i304v7::::res://assets/godotcon_assets/godoot_sprite.png<>uid://laaa2vdnnx3f::::res://entities/player_controller.gd<>uid://bd32y81wfxa4l::::res://ui/chat_ui.tscn
 player_controller.gd::GDScript::772078730743919985::1761985242::0::1::::PlayerController<>Node<><>0<>0<><>::
 stand_on_button.gd::GDScript::5866332716541923926::1761811693::0::1::::StandOnButton<>Node2D<><>0<>0<><>::

@@ -1,0 +1,11 @@
+res://entities/player.tscn
+res://entities/torch.tscn
+res://levels/castle_level.tscn
+res://entities/stand_on_button.tscn
+res://entities/castle_door.tscn
+res://entities/castle_door.gd
+res://entities/net_position_lerper.gd
+res://entities/net_position_lerper.tscn
+res://ui/chat_ui.gd
+res://ui/chat_ui.tscn
+res://components/server_chat_rpc.gd

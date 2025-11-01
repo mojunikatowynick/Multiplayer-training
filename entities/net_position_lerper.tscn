@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://5e2pcv352yin"]
+
+[ext_resource type="Script" uid="uid://dx6qn7dem3f3" path="res://entities/net_position_lerper.gd" id="1_he88k"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_he88k"]
+properties/0/path = NodePath("../AnimationPlayer:current_animation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:networked_position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("../PlayerSprite:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[node name="NetPositionLerper" type="Node" node_paths=PackedStringArray("multiplayer_synchronizer")]
+script = ExtResource("1_he88k")
+multiplayer_synchronizer = NodePath("MultiplayerSynchronizer")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 1.0
+replication_config = SubResource("SceneReplicationConfig_he88k")

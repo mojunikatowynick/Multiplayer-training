@@ -1,13 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://01tmnbmsfsnf"]
 
 [ext_resource type="Texture2D" uid="uid://ddf0nv4i304v7" path="res://assets/godotcon_assets/godoot_sprite.png" id="1_b0kkn"]
+[ext_resource type="PackedScene" uid="uid://5e2pcv352yin" path="res://entities/net_position_lerper.tscn" id="1_rfe5m"]
 [ext_resource type="Script" uid="uid://laaa2vdnnx3f" path="res://entities/player_controller.gd" id="2_b0kkn"]
 [ext_resource type="PackedScene" uid="uid://bd32y81wfxa4l" path="res://ui/chat_ui.tscn" id="3_e4p34"]
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_e4p34"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wwbr7"]
 radius = 29.0
@@ -107,9 +103,11 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_interval = 1.0
-replication_config = SubResource("SceneReplicationConfig_e4p34")
+[node name="NetPositionLerper" parent="." node_paths=PackedStringArray("controlled_object") instance=ExtResource("1_rfe5m")]
+controlled_object = NodePath("..")
+
+[node name="MultiplayerSynchronizer" parent="NetPositionLerper" index="0"]
+replication_interval = 0.05
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 modulate = Color(1, 0.619608, 0.2, 1)
@@ -159,3 +157,5 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Peer Id"
 horizontal_alignment = 1
+
+[editable path="NetPositionLerper"]

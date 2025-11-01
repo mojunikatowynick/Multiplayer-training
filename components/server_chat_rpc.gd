@@ -8,8 +8,10 @@ signal msg_received(msg: String)
 
 ## Call this function on the peer's computer to
 ## make them receive your message
+@rpc("any_peer", "reliable", "call_local")
 func receive_message(msg: String) -> void:
-	msg_received.emit(msg)
+	var sender_id := str(multiplayer.get_remote_sender_id())
+	msg_received.emit(sender_id + ": " + msg)
 	pass
 
 ## An RPC function is a function that you can call
